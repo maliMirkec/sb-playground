@@ -1,0 +1,15 @@
+extends /_layout/layout.pug
+
+block variables
+  - pageTitle = "SVG Ribbon"
+
+block content
+  :markdown-it(html)
+    # SVG Ribbon
+
+  include ../_partials/ribbon-list.pug
+
+  .ribbon.ribbon--gamma(role="navigation" aria-label="breadcrumbs")
+    a(href="https://www.silvestar.codes/" class="ribbon__element") Home
+    a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
+    a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post

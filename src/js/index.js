@@ -1,1 +1,1 @@
-console.log('Powered by Starter Project (https://play.silvestar.codes).')
+console.log('Powered by SB Playground (https://play.silvestar.codes).')

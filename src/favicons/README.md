@@ -16,8 +16,8 @@ Insert the following code in the `head` section of your pages:
     <link rel="manifest" href="/favicons/site.webmanifest">
     <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#d91a79">
     <link rel="shortcut icon" href="/favicons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Starter Project">
-    <meta name="application-name" content="Starter Project">
+    <meta name="apple-mobile-web-app-title" content="SB Playground">
+    <meta name="application-name" content="SB Playground">
     <meta name="msapplication-TileColor" content="#1ed9d9">
     <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">

@@ -1,5 +1,5 @@
 {
-  "title": "Starter Project",
+  "title": "SB Playground",
   "source": "helpers.source",
   "destination": "helpers.dist/config.kss.dist/",
   "css": [

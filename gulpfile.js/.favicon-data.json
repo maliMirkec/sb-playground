@@ -15,7 +15,7 @@
         "precomposedIcons": false,
         "declareOnlyDefaultIcon": true
       },
-      "appName": "Starter Project"
+      "appName": "SB Playground"
     },
     "desktopBrowser": {},
     "windows": {
@@ -31,13 +31,13 @@
           "rectangle": false
         }
       },
-      "appName": "Starter Project"
+      "appName": "SB Playground"
     },
     "androidChrome": {
       "pictureAspect": "shadow",
       "themeColor": "#1ed9d9",
       "manifest": {
-        "name": "Starter Project",
+        "name": "SB Playground",
         "display": "standalone",
         "orientation": "notSet",
         "onConflict": "override",
