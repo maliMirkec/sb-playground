@@ -152,6 +152,10 @@ $c9: #fff;
     margin-left: -5%;
   }
 
+  .ribbon--shadow & {
+    box-shadow: 0 3px 3px -3px black;
+  }
+
   .ribbon--gradient & {
     &:nth-child(1) {
       background-image: linear-gradient(to right, adjust-hue($c1, 7deg), $c1);
