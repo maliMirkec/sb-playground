@@ -1,0 +1,78 @@
+extends /_layout/layout.pug
+
+block variables
+  - pageTitle = "Alpha Ribbon"
+
+block content
+  .ribbon.ribbon--alpha(role="navigation" aria-label="breadcrumbs")
+    a(href="https://www.silvestar.codes/" class="ribbon__element") Home
+    a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
+    a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post
+
+  :markdown-it(html)
+    # Alpha Ribbon
+
+    A ribbon made with CSS triangles and pseudo-classes.
+
+    Modifier: `.ribbon--alpha`.
+
+    The HTML structure:
+
+    ```html
+      <div class="ribbon ribbon--alpha" role="navigation" aria-label="breadcrumbs">
+        <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
+      </div>
+    ```
+
+    The CSS code:
+
+    ```css
+    // The left triangle
+    .ribbon--alpha .ribbon__element:before {
+      border-bottom: 1.333333em solid transparent;
+      border-left: 0.66667em solid #fff;
+      border-top: 1.333333em solid transparent;
+      bottom: 0;
+      content: '';
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+
+    // The right triangle
+    .ribbon--alpha .ribbon__element:after {
+      border-bottom: 1.333333em solid transparent;
+      border-left: 0.666666em solid;
+      border-top: 1.333333em solid transparent;
+      bottom: 0;
+      content: '';
+      height: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      -webkit-transform: translateX(0.66667em);
+      -ms-transform: translateX(0.66667em);
+      transform: translateX(0.66667em);
+      width: 0;
+    }
+
+    // Match background color for right triangles
+    .ribbon--alpha .ribbon__element:nth-child(1):after {
+      border-left-color: #11d295;
+    }
+
+    .ribbon--alpha .ribbon__element:nth-child(2):after {
+      border-left-color: #ef3675;
+    }
+
+    .ribbon--alpha .ribbon__element:nth-child(3):after {
+      border-left-color: #4cd4e9;
+    }
+    ```
+
+
+  include ../_partials/ribbon-list.pug

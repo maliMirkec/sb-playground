@@ -1,0 +1,78 @@
+extends /_layout/layout.pug
+
+block variables
+  - pageTitle = "Beta Ribbon"
+
+block content
+  .ribbon.ribbon--beta(role="navigation" aria-label="breadcrumbs")
+    a(href="https://www.silvestar.codes/" class="ribbon__element") Home
+    a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
+    a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post
+
+  :markdown-it(html)
+    # Beta Ribbon
+
+    A ribbon made with SVG background and pseudo-classes.
+
+    Modifier: `.ribbon--beta`.
+
+    The HTML structure:
+
+    ```html
+      <div class="ribbon ribbon--beta" role="navigation" aria-label="breadcrumbs">
+        <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
+      </div>
+    ```
+
+    The CSS code:
+
+    ```css
+    // The left triangle
+    .ribbon--beta .ribbon__element:before {
+      background-image: url(/gfx/svg/triangle.svg);
+      background-position: center left;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0.666666em;
+    }
+
+    // The right triangle
+    .ribbon--beta .ribbon__element:after {
+      background-position: center left;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      -webkit-transform: translateX(0.66667em);
+      -ms-transform: translateX(0.66667em);
+      transform: translateX(0.66667em);
+      width: 0.666666em;
+    }
+
+    // Match background color for right triangles
+    .ribbon--beta .ribbon__element:nth-child(1):after {
+      background-image: url(/gfx/svg/triangle1.svg);
+    }
+
+    .ribbon--beta .ribbon__element:nth-child(2):after {
+      background-image: url(/gfx/svg/triangle2.svg);
+    }
+
+    .ribbon--beta .ribbon__element:nth-child(3):after {
+      background-image: url(/gfx/svg/triangle3.svg);
+    }
+    ```
+
+  include ../_partials/ribbon-list.pug

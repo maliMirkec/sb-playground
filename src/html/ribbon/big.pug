@@ -1,0 +1,38 @@
+extends /_layout/layout.pug
+
+block variables
+  - pageTitle = "Big Ribbon"
+
+block content
+  .ribbon.ribbon--alpha.ribbon--big(role="navigation" aria-label="breadcrumbs")
+    a(href="https://www.silvestar.codes/" class="ribbon__element") Home
+    a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
+    a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post
+
+  :markdown-it(html)
+    # Big Ribbon
+
+    A big ribbon. The sizing of the ribbon elements is based on `em` units. Since the `em` unit is relative to parent element `font-size`, we could control the size of the ribbon elements on a single place. To make sure this approach is working, don't overwrite `em` size definitions. Also, don't forget to add `ribbon--alpha`, `ribbon--beta` or `ribbon--gamma` modifier.
+
+    Modifier: `.ribbon--big`.
+
+    The HTML structure:
+
+    ```html
+      <div class="ribbon ribbon--alpha ribbon--big" role="navigation" aria-label="breadcrumbs">
+        <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
+      </div>
+    ```
+
+    The CSS code:
+
+    ```css
+    // Define bigger font size on wrapper element
+    .ribbon--big {
+      font-size: 20px;
+    }
+    ```
+
+  include ../_partials/ribbon-list.pug

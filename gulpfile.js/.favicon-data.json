@@ -1,65 +1,69 @@
 {
-  "masterPicture": "helpers.source/gfx/svg/sb-playground.svg",
-  "temp": "helpers.source/favicons/",
-  "dest": "helpers.dist/favicons/",
-  "iconsPath": "/favicons/",
+  "masterPicture": "helpers.source/gfx/svg/sb.svg",
+  "temp": "helpers.source/favicon/",
+  "dest": "helpers.dist/favicon/",
+  "iconsPath": "/favicon/",
   "markupFile": "helpers.proot/gulpfile.js/.favicon-data-generated.json",
   "design": {
     "ios": {
       "pictureAspect": "backgroundAndMargin",
       "backgroundColor": "#ffffff",
-      "margin": "14%",
+      "margin": "42%",
       "assets": {
-        "ios6AndPriorIcons": false,
-        "ios7AndLaterIcons": false,
-        "precomposedIcons": false,
+        "ios6AndPriorIcons": true,
+        "ios7AndLaterIcons": true,
+        "precomposedIcons": true,
         "declareOnlyDefaultIcon": true
       },
-      "appName": "Starter Project"
+      "appName": "SB Playground"
     },
     "desktopBrowser": {},
     "windows": {
       "pictureAspect": "noChange",
-      "backgroundColor": "#1ed9d9",
+      "backgroundColor": "#2b5797",
       "onConflict": "override",
       "assets": {
-        "windows80Ie10Tile": false,
+        "windows80Ie10Tile": true,
         "windows10Ie11EdgeTiles": {
-          "small": false,
+          "small": true,
           "medium": true,
-          "big": false,
-          "rectangle": false
+          "big": true,
+          "rectangle": true
         }
       },
-      "appName": "Starter Project"
+      "appName": "SB Playground"
     },
     "androidChrome": {
-      "pictureAspect": "shadow",
-      "themeColor": "#1ed9d9",
+      "pictureAspect": "noChange",
+      "themeColor": "#ffffff",
       "manifest": {
-        "name": "Starter Project",
-        "display": "standalone",
+        "name": "SB Playground",
+        "display": "browser",
         "orientation": "notSet",
         "onConflict": "override",
         "declared": true
       },
       "assets": {
         "legacyIcon": false,
-        "lowResolutionIcons": false
+        "lowResolutionIcons": true
       }
     },
     "safariPinnedTab": {
       "pictureAspect": "blackAndWhite",
-      "threshold": 35.3125,
-      "themeColor": "#d91a79"
+      "threshold": 93.28125,
+      "themeColor": "#e01258"
     }
   },
   "settings": {
-    "compression": 5,
-    "scalingAlgorithm": "Cubic",
+    "compression": 2,
+    "scalingAlgorithm": "Mitchell",
     "errorOnImageTooSmall": false,
-    "readmeFile": true,
-    "htmlCodeFile": true,
+    "readmeFile": false,
+    "htmlCodeFile": false,
     "usePathAsIs": false
+  },
+  "versioning": {
+    "paramName": "v",
+    "paramValue": "starbist"
   }
 }
