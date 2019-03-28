@@ -1,15 +1,44 @@
 extends /_layout/layout.pug
 
 block variables
-  - pageTitle = "SVG Ribbon"
+  - pageTitle = "Gamma Ribbon"
 
 block content
-  :markdown-it(html)
-    # SVG Ribbon
-
-  include ../_partials/ribbon-list.pug
-
   .ribbon.ribbon--gamma(role="navigation" aria-label="breadcrumbs")
     a(href="https://www.silvestar.codes/" class="ribbon__element") Home
     a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
     a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post
+
+  :markdown-it(html)
+    # Gamma Ribbon
+
+    A ribbon made with CSS clip path and pseudo-classes.
+
+    Modifier: `.ribbon--gamma`.
+
+    The HTML structure:
+
+    ```html
+      <div class="ribbon ribbon--gamma" role="navigation" aria-label="breadcrumbs">
+        <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
+      </div>
+    ```
+
+    The CSS code:
+
+    ```css
+    // The left triangle
+    .ribbon--gamma .ribbon__element {
+      -webkit-clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+      clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+    }
+
+    // Move back every element except the first one by the width of the 'clip arrow'
+    .ribbon--gamma .ribbon__element + .ribbon__element {
+      margin-left: -5%;
+    }
+    ```
+
+  include ../_partials/ribbon-list.pug

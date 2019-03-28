@@ -1,15 +1,55 @@
 extends /_layout/layout.pug
 
 block variables
-  - pageTitle = "SVG Ribbon"
+  - pageTitle = "Gradient Ribbon"
 
 block content
-  :markdown-it(html)
-    # Gradient Ribbon
-
-  include ../_partials/ribbon-list.pug
-
   .ribbon.ribbon--alpha.ribbon--gradient(role="navigation" aria-label="breadcrumbs")
     a(href="https://www.silvestar.codes/" class="ribbon__element") Home
     a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
     a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post
+
+  :markdown-it(html)
+    # Gradient Ribbon
+
+    A ribbon with a linear gradient. Be sure to match the end color with the color of the right arrow. Also, don't forget to add `ribbon--alpha`, `ribbon--beta` or `ribbon--gamma` modifier.
+
+    Modifier: `.ribbon--gradient`.
+
+    The HTML structure:
+
+    ```html
+      <div class="ribbon ribbon--alpha ribbon--gradient" role="navigation" aria-label="breadcrumbs">
+        <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
+        <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
+      </div>
+    ```
+
+    The CSS code:
+
+    ```css
+    // Apply subtle gradients
+    .ribbon--gradient .ribbon__element:nth-child(1) {
+      background-image: -webkit-gradient(linear, left top, right top, from(#11d2ab), to(#11d295));
+      background-image: -webkit-linear-gradient(left, #11d2ab, #11d295);
+      background-image: -o-linear-gradient(left, #11d2ab, #11d295);
+      background-image: linear-gradient(to right, #11d2ab, #11d295);
+    }
+
+    .ribbon--gradient .ribbon__element:nth-child(2) {
+      background-image: -webkit-gradient(linear, left top, right top, from(#ef365f), to(#ef3675));
+      background-image: -webkit-linear-gradient(left, #ef365f, #ef3675);
+      background-image: -o-linear-gradient(left, #ef365f, #ef3675);
+      background-image: linear-gradient(to right, #ef365f, #ef3675);
+    }
+
+    .ribbon--gradient .ribbon__element:nth-child(3) {
+      background-image: -webkit-gradient(linear, left top, right top, from(#4cc2e9), to(#4cd4e9));
+      background-image: -webkit-linear-gradient(left, #4cc2e9, #4cd4e9);
+      background-image: -o-linear-gradient(left, #4cc2e9, #4cd4e9);
+      background-image: linear-gradient(to right, #4cc2e9, #4cd4e9);
+    }
+    ```
+
+  include ../_partials/ribbon-list.pug
