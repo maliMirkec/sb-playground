@@ -1,5 +1,5 @@
 {
-  "masterPicture": "helpers.source/gfx/svg/starter-project.svg",
+  "masterPicture": "helpers.source/gfx/svg/sb-playground.svg",
   "temp": "helpers.source/favicons/",
   "dest": "helpers.dist/favicons/",
   "iconsPath": "/favicons/",
