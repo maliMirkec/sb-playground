@@ -4,7 +4,7 @@ aside.sidebar
   nav
     ul
       each val, index in navData
-        - var currentClass = val.title == pageTitle ? 'highlight' : ''
+        - var currentClass = val.title == pageTitle || val.title == parentTitle ? 'highlight' : ''
         li(class=currentClass)
           a(href=val.href)
             span= val.title == pageTitle ? '👉' : val.prefix
