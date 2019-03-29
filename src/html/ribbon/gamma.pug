@@ -30,15 +30,20 @@ block content
     The CSS code:
 
     ```css
-    // The left triangle
+    /* Masking */
     .ribbon--gamma .ribbon__element {
       -webkit-clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
       clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
     }
 
-    // Move back every element except the first one by the width of the 'clip arrow'
-    .ribbon--gamma .ribbon__element + .ribbon__element {
-      margin-left: -5%;
+    /* Extend all ribbon element except the last one to fix the spacing issues */
+    .ribbon--gamma .ribbon__element:not(:last-child) {
+      width: 105%;
+    }
+
+    /* Extend the last element to match the last arrow size */
+    .ribbon--gamma .ribbon__element:last-child {
+      width: calc(100% + 0.666666em);
     }
     ```
 

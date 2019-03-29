@@ -15,7 +15,7 @@ block content
 
     A small ribbon. The sizing of the ribbon elements is based on `em` units. Since the `em` unit is relative to parent element `font-size`, we could control the size of the ribbon elements on a single place. To make sure this approach is working, don't overwrite `em` size definitions. Also, don't forget to add `ribbon--alpha`, `ribbon--beta` or `ribbon--gamma` modifier.
 
-    Modifier: `.ribbon--shadow.ribbon--gradient`.
+    Modifier: `.ribbon--small`.
 
     The HTML structure:
 
@@ -30,7 +30,7 @@ block content
     The CSS code:
 
     ```css
-    // Define smaller font size on wrapper element
+    /* Define smaller font size on wrapper element */
     .ribbon--small {
       font-size: 10px;
     }

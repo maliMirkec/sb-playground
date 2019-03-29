@@ -1,4 +1,3 @@
-$s: 4;
 $c1: lighten(#0fba84, 5%);
 $c2: lighten(#e01258, 10%);
 $c3: lighten(#1ec9e4, 10%);
@@ -13,6 +12,10 @@ $c9: #fff;
   margin-right: auto;
   margin-top: 40px;
   width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .ribbon--small {
@@ -146,15 +149,18 @@ $c9: #fff;
 
   .ribbon--gamma & {
     clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
-    padding: 0.666666em 0.666666em 0.666666em 1em;
-  }
 
-  .ribbon--gamma & + & {
-    margin-left: -5%;
+    &:not(:last-child) {
+      width: 105%;
+    }
+
+    &:last-child {
+      width: calc(100% + 0.666666em);
+    }
   }
 
   .ribbon--shadow & {
-    box-shadow: 0 3px 3px -3px black;
+    box-shadow: 1px 3px 3px -3px black;
   }
 
   .ribbon--gradient & {
