@@ -15,7 +15,7 @@ block content
 
     A ribbon with a linear gradient and a subtle drop shadow. Be sure to match the end color with the color of the right arrow. Make sure the shadow is not visible on either side of the element. Also, don't forget to add `ribbon--alpha`, `ribbon--beta` or `ribbon--gamma` modifier.
 
-    Modifier: `.ribbon--shadow.ribbon--gradient`.
+    Modifiers: `.ribbon--shadow.ribbon--gradient`.
 
     The HTML structure:
 
@@ -30,10 +30,32 @@ block content
     The CSS code:
 
     ```css
-    // Apply subtle shadow
+    /* Apply subtle shadow */
     .ribbon--shadow .ribbon__element {
       -webkit-box-shadow: 0 3px 3px -3px black;
-      box-shadow: 0 3px 3px -3px black;
+      box-shadow: 1px 3px 3px -3px black;
+    }
+
+    /* Apply subtle gradients */
+    .ribbon--gradient .ribbon__element:nth-child(1) {
+      background-image: -webkit-gradient(linear, left top, right top, from(#11d2ab), to(#11d295));
+      background-image: -webkit-linear-gradient(left, #11d2ab, #11d295);
+      background-image: -o-linear-gradient(left, #11d2ab, #11d295);
+      background-image: linear-gradient(to right, #11d2ab, #11d295);
+    }
+
+    .ribbon--gradient .ribbon__element:nth-child(2) {
+      background-image: -webkit-gradient(linear, left top, right top, from(#ef365f), to(#ef3675));
+      background-image: -webkit-linear-gradient(left, #ef365f, #ef3675);
+      background-image: -o-linear-gradient(left, #ef365f, #ef3675);
+      background-image: linear-gradient(to right, #ef365f, #ef3675);
+    }
+
+    .ribbon--gradient .ribbon__element:nth-child(3) {
+      background-image: -webkit-gradient(linear, left top, right top, from(#4cc2e9), to(#4cd4e9));
+      background-image: -webkit-linear-gradient(left, #4cc2e9, #4cd4e9);
+      background-image: -o-linear-gradient(left, #4cc2e9, #4cd4e9);
+      background-image: linear-gradient(to right, #4cc2e9, #4cd4e9);
     }
     ```
 
