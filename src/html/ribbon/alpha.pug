@@ -20,11 +20,11 @@ block content
     The HTML structure:
 
     ```html
-    <div class="ribbon ribbon--alpha" role="navigation" aria-label="breadcrumbs">
+    <nav class="ribbon ribbon--alpha" role="navigation" aria-label="breadcrumbs">
       <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
       <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
       <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
-    </div>
+    </nav>
     ```
 
     The CSS code:
@@ -32,9 +32,9 @@ block content
     ```css
     /* The left triangle */
     .ribbon--alpha .ribbon__element:before {
-      border-bottom: 1.333333em solid transparent;
-      border-left: 0.66667em solid #fff;
-      border-top: 1.333333em solid transparent;
+      border-bottom: 1.333em solid transparent;
+      border-left: 0.667667em solid #fff;
+      border-top: 1.333em solid transparent;
       bottom: 0;
       content: '';
       height: 0;
@@ -46,18 +46,18 @@ block content
 
     /* The right triangle */
     .ribbon--alpha .ribbon__element:after {
-      border-bottom: 1.333333em solid transparent;
-      border-left: 0.666666em solid;
-      border-top: 1.333333em solid transparent;
+      border-bottom: 1.333em solid transparent;
+      border-left: 0.667em solid;
+      border-top: 1.333em solid transparent;
       bottom: 0;
       content: '';
       height: 0;
       position: absolute;
       right: 0;
       top: 0;
-      -webkit-transform: translateX(0.66667em);
-      -ms-transform: translateX(0.66667em);
-      transform: translateX(0.66667em);
+      -webkit-transform: translateX(0.667667em);
+      -ms-transform: translateX(0.667667em);
+      transform: translateX(0.667667em);
       width: 0;
     }
 

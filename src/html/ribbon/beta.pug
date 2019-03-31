@@ -20,11 +20,11 @@ block content
     The HTML structure:
 
     ```html
-    <div class="ribbon ribbon--beta" role="navigation" aria-label="breadcrumbs">
+    <nav class="ribbon ribbon--beta" role="navigation" aria-label="breadcrumbs">
       <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
       <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
       <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
-    </div>
+    </nav>
     ```
 
     The CSS code:
@@ -42,7 +42,7 @@ block content
       left: 0;
       position: absolute;
       top: 0;
-      width: 0.666666em;
+      width: 0.667em;
     }
 
     /* The right triangle */
@@ -56,10 +56,10 @@ block content
       position: absolute;
       right: 0;
       top: 0;
-      -webkit-transform: translateX(0.66667em);
-      -ms-transform: translateX(0.66667em);
-      transform: translateX(0.66667em);
-      width: 0.666666em;
+      -webkit-transform: translateX(0.667667em);
+      -ms-transform: translateX(0.667667em);
+      transform: translateX(0.667667em);
+      width: 0.667em;
     }
 
     /* Match background color for right triangles */

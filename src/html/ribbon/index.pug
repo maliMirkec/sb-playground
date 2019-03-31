@@ -4,17 +4,22 @@ block variables
   - pageTitle = "Ribbon"
 
 block content
+  .ribbon.ribbon--alpha(role="navigation" aria-label="breadcrumbs")
+    a(href="/alpha/" class="ribbon__element") Alpha
+    a(href="/beta/" class="ribbon__element") Beta
+    a(href="/gamma/" class="ribbon__element" aria-current="page") Gamma
+
   :markdown-it(html)
     # Ribbon
 
     You could find out how to build the ribbon component in the following examples. The HTML structure:
 
     ```html
-    <div class="ribbon ribbon--modifier" role="navigation" aria-label="breadcrumbs">
+    <nav class="ribbon ribbon--modifier" role="navigation" aria-label="breadcrumbs">
       <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
       <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
       <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
-    </div>
+    </nav>
     ```
 
     where `ribbon--modifier` is a modifier class. The following modifier classes are available:
@@ -48,8 +53,8 @@ block content
       font-size: 1.5em;
       font-weight: 700;
       letter-spacing: 0.01em;
-      line-height: 1.333333em;
-      padding: 0.666666em 0 0.666666em 1.333333em;
+      line-height: 1.333em;
+      padding: 0.667em 0 0.667em 1.333em;
       position: relative;
     }
 
