@@ -4,6 +4,7 @@ $c3: lighten(#1ec9e4, 10%);
 $c9: #fff;
 
 .ribbon {
+  color: $c9;
   display: grid;
   font-size: 15px;
   grid-gap: 1px;
@@ -16,6 +17,10 @@ $c9: #fff;
   * {
     box-sizing: border-box;
   }
+}
+
+.ribbon--auto {
+  grid-template-columns: repeat(3, max-content) 1em;
 }
 
 .ribbon--small {
@@ -32,8 +37,8 @@ $c9: #fff;
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 0.01em;
-  line-height: 1.333333em;
-  padding: 0.666666em 0 0.666666em 1.333333em;
+  line-height: 1.333em;
+  padding: 0.667em 0.667em 0.667em 1.333em;
   position: relative;
   text-decoration: none;
 
@@ -54,9 +59,9 @@ $c9: #fff;
 
   .ribbon--alpha & {
     &:before {
-      border-bottom: 1.333333em solid transparent;
-      border-left: 0.666666em solid $c9;
-      border-top: 1.333333em solid transparent;
+      border-bottom: 1.333em solid transparent;
+      border-left: 0.667em solid $c9;
+      border-top: 1.333em solid transparent;
       bottom: 0;
       content: '';
       height: 0;
@@ -67,16 +72,16 @@ $c9: #fff;
     }
 
     &:after {
-      border-bottom: 1.333333em solid transparent;
-      border-left: 0.666666em solid;
-      border-top: 1.333333em solid transparent;
+      border-bottom: 1.333em solid transparent;
+      border-left: 0.667em solid;
+      border-top: 1.333em solid transparent;
       bottom: 0;
       content: '';
       height: 0;
       position: absolute;
       right: 0;
       top: 0;
-      transform: translateX(0.666666em);
+      transform: translateX(0.667em);
       width: 0;
     }
 
@@ -101,7 +106,7 @@ $c9: #fff;
 
   .ribbon--beta & {
     &:before {
-      background-image: url(/gfx/svg/triangle.svg);
+      background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAgNDAiIHdpZHRoPSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjZmZmIj48cGF0aCBkPSJtNSAxNSAyMCAxMGgtNDB6IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0ibWF0cml4KDAgLTEgLTEgMCAyNSAyNSkiLz48L3N2Zz4=);
       background-position: center left;
       background-repeat: no-repeat;
       background-size: 100%;
@@ -111,7 +116,7 @@ $c9: #fff;
       left: 0;
       position: absolute;
       top: 0;
-      width: 0.666666em;
+      width: 0.667em;
     }
 
     &:after {
@@ -124,25 +129,25 @@ $c9: #fff;
       position: absolute;
       right: 0;
       top: 0;
-      transform: translateX(0.666666em);
-      width: 0.666666em;
+      transform: translateX(0.667em);
+      width: 0.667em;
     }
 
     &:nth-child(1) {
       &:after {
-        background-image: url(/gfx/svg/triangle1.svg);
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAgNDAiIHdpZHRoPSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtNSAxNSAyMCAxMGgtNDB6IiBmaWxsPSIjMTFkMjk1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0ibWF0cml4KDAgLTEgLTEgMCAyNSAyNSkiLz48L3N2Zz4=);
       }
     }
 
     &:nth-child(2) {
       &:after {
-        background-image: url(/gfx/svg/triangle2.svg);
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAgNDAiIHdpZHRoPSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtNSAxNSAyMCAxMGgtNDB6IiBmaWxsPSIjZWYzNjc1IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0ibWF0cml4KDAgLTEgLTEgMCAyNSAyNSkiLz48L3N2Zz4=);
       }
     }
 
     &:nth-child(3) {
       &:after {
-        background-image: url(/gfx/svg/triangle3.svg);
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTAgNDAiIHdpZHRoPSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtNSAxNSAyMCAxMGgtNDB6IiBmaWxsPSIjNGNkNGU5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0ibWF0cml4KDAgLTEgLTEgMCAyNSAyNSkiLz48L3N2Zz4=);
       }
     }
   }
@@ -155,7 +160,7 @@ $c9: #fff;
     }
 
     &:last-child {
-      width: calc(100% + 0.666666em);
+      width: calc(100% + 0.667em);
     }
   }
 
@@ -165,15 +170,15 @@ $c9: #fff;
 
   .ribbon--gradient & {
     &:nth-child(1) {
-      background-image: linear-gradient(to right, adjust-hue($c1, 7deg), $c1);
+      background-image: linear-gradient(to right, adjust-hue($c1, 20deg), $c1);
     }
 
     &:nth-child(2) {
-      background-image: linear-gradient(to right, adjust-hue($c2, 7deg), $c2);
+      background-image: linear-gradient(to right, adjust-hue($c2, -20deg), $c2);
     }
 
     &:nth-child(3) {
-      background-image: linear-gradient(to right, adjust-hue($c3, 7deg), $c3);
+      background-image: linear-gradient(to right, adjust-hue($c3, 20deg), $c3);
     }
   }
 
