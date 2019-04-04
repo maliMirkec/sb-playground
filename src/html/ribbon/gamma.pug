@@ -5,15 +5,24 @@ block variables
   - parentTitle = "Ribbon"
 
 block content
-  .ribbon.ribbon--gamma(role="navigation" aria-label="breadcrumbs")
-    a(href="https://www.silvestar.codes/" class="ribbon__element") Home
-    a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
-    a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post
+  nav.ribbon.ribbon--gamma(role="navigation" aria-label="breadcrumbs")
+    a(href="https://www.silvestar.codes/" class="ribbon__element")
+      img(src="/gfx/svg/triangle.svg", alt="Triangle", inline="true")
+      span Home
+      img(src="/gfx/svg/triangle.svg", alt="Triangle", inline="true")
+    a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element")
+      img(src="/gfx/svg/triangle.svg", alt="Triangle", inline="true")
+      span Blog
+      img(src="/gfx/svg/triangle.svg", alt="Triangle", inline="true")
+    a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page")
+      img(src="/gfx/svg/triangle.svg", alt="Triangle", inline="true")
+      span Post
+      img(src="/gfx/svg/triangle.svg", alt="Triangle", inline="true")
 
   :markdown-it(html)
     # Gamma Ribbon
 
-    A ribbon made with CSS clip path and pseudo-classes.
+    A ribbon made with inline SVGs.
 
     Modifier: `.ribbon--gamma`.
 
@@ -21,29 +30,57 @@ block content
 
     ```html
     <nav class="ribbon ribbon--gamma" role="navigation" aria-label="breadcrumbs">
-      <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
-      <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
-      <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
+      <a class="ribbon__element" href="https://www.silvestar.codes/">
+        <svg viewBox="0 0 10 40"><path fill-rule="evenodd" d="M10 20L0 0v40z"></path></svg>
+        <span>Home</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 40" src="/gfx/svg/triangle.svg"><path fill-rule="evenodd" d="M10 20L0 0v40z"></path></svg>
+      </a>
+      <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">
+        <svg viewBox="0 0 10 40"><path fill-rule="evenodd" d="M10 20L0 0v40z"></path></svg>
+        <span>Blog</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 40" src="/gfx/svg/triangle.svg"><path fill-rule="evenodd" d="M10 20L0 0v40z"></path></svg>
+      </a>
+      <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">
+        <svg viewBox="0 0 10 40"><path fill-rule="evenodd" d="M10 20L0 0v40z"></path></svg>
+        <span>Post</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 40" src="/gfx/svg/triangle.svg"><path fill-rule="evenodd" d="M10 20L0 0v40z"></path></svg>
+      </a>
     </nav>
     ```
 
     The CSS code:
 
     ```css
-    /* Masking */
-    .ribbon--gamma .ribbon__element {
-      -webkit-clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
-      clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+    /* Set the correct size of the inline SVG and position absolutely */
+    .ribbon--gamma .ribbon__element svg {
+      height: 2.667em;
+      position: absolute;
+      top: 0;
+      width: 0.667em;
     }
 
-    /* Extend all ribbon element except the last one to fix the spacing issues */
-    .ribbon--gamma .ribbon__element:not(:last-child) {
-      width: 105%;
+    /* Match fill color for left triangle and stick it to the left side */
+    .ribbon--gamma .ribbon__element svg:first-child {
+      fill: #fff;
+      left: 0;
     }
 
-    /* Extend the last element to match the last arrow size */
-    .ribbon--gamma .ribbon__element:last-child {
-      width: calc(100% + 0.667em);
+    /* Stick the right triangle outside of the right side */
+    .ribbon--gamma .ribbon__element svg:last-child {
+      left: 100%;
+    }
+
+    /* Match fill color for right triangles */
+    .ribbon--gamma .ribbon__element:nth-child(1) svg:last-child {
+      fill: #11d295;
+    }
+
+    .ribbon--gamma .ribbon__element:nth-child(2) svg:last-child {
+      fill: #ef3675;
+    }
+
+    .ribbon--gamma .ribbon__element:nth-child(3) svg:last-child {
+      fill: #4cd4e9;
     }
     ```
 

@@ -153,6 +153,48 @@ $c9: #fff;
   }
 
   .ribbon--gamma & {
+    svg {
+      height: 2.667em;
+      position: absolute;
+      top: 0;
+      width: 0.667em;
+
+      &:first-child {
+        fill: $c9;
+        left: 0;
+      }
+
+      &:last-child {
+        left: 100%;
+      }
+    }
+
+    &:nth-child(1) {
+      svg {
+        &:last-child {
+          fill: $c1;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      svg {
+        &:last-child {
+          fill: $c2;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      svg {
+        &:last-child {
+          fill: $c3;
+        }
+      }
+    }
+  }
+
+  .ribbon--delta & {
     clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
 
     &:not(:last-child) {

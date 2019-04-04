@@ -1,26 +1,26 @@
 extends /_layout/layout.pug
 
 block variables
-  - pageTitle = "Auto Ribbon"
+  - pageTitle = "Delta Ribbon"
   - parentTitle = "Ribbon"
 
 block content
-  nav.ribbon.ribbon--alpha.ribbon--auto(role="navigation" aria-label="breadcrumbs")
+  nav.ribbon.ribbon--delta(role="navigation" aria-label="breadcrumbs")
     a(href="https://www.silvestar.codes/" class="ribbon__element") Home
     a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
     a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post
 
   :markdown-it(html)
-    # Auto Ribbon
+    # Delta Ribbon
 
-    An auto ribbon has elements that doesn't fill out the entire available space. Don't forget to add `ribbon--alpha`, `ribbon--beta` or `ribbon--gamma` modifier.
+    A ribbon made with CSS clip path and pseudo-classes.
 
-    Modifier: `.ribbon--auto`.
+    Modifier: `.ribbon--delta`.
 
     The HTML structure:
 
     ```html
-    <nav class="ribbon ribbon--alpha ribbon--auto" role="navigation" aria-label="breadcrumbs">
+    <nav class="ribbon ribbon--delta" role="navigation" aria-label="breadcrumbs">
       <a class="ribbon__element" href="https://www.silvestar.codes/">Home</a>
       <a class="ribbon__element" href="https://www.silvestar.codes/categories/articles/">Blog</a>
       <a class="ribbon__element" href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" aria-current="page">Post</a>
@@ -30,9 +30,20 @@ block content
     The CSS code:
 
     ```css
-    /* Define full width ribbon elements */
-    .ribbon--auto {
-      grid-template-columns: repeat(3, 1fr) 1em;
+    /* Masking */
+    .ribbon--delta .ribbon__element {
+      -webkit-clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+      clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+    }
+
+    /* Extend all ribbon element except the last one to fix the spacing issues */
+    .ribbon--delta .ribbon__element:not(:last-child) {
+      width: 105%;
+    }
+
+    /* Extend the last element to match the last arrow size */
+    .ribbon--delta .ribbon__element:last-child {
+      width: calc(100% + 0.667em);
     }
     ```
 
