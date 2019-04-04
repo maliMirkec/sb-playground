@@ -7,5 +7,5 @@ aside.sidebar
         - var currentClass = val.title == pageTitle || val.title == parentTitle ? 'highlight' : ''
         li(class=currentClass)
           a(href=val.href)
-            span= val.title == pageTitle ? '👉' : val.prefix
+            span= val.title == pageTitle || val.title == parentTitle ? '👉' : val.prefix
             span= val.title

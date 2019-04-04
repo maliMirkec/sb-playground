@@ -4,10 +4,10 @@ block variables
   - pageTitle = "Ribbon"
 
 block content
-  .ribbon.ribbon--alpha(role="navigation" aria-label="breadcrumbs")
-    a(href="/alpha/" class="ribbon__element") Alpha
-    a(href="/beta/" class="ribbon__element") Beta
-    a(href="/gamma/" class="ribbon__element" aria-current="page") Gamma
+  nav.ribbon.ribbon--alpha(role="navigation" aria-label="breadcrumbs")
+    a(href="https://www.silvestar.codes/" class="ribbon__element") Home
+    a(href="https://www.silvestar.codes/categories/articles/" class="ribbon__element") Blog
+    a(href="https://www.silvestar.codes/articles/building-an-animated-sticky-header-with-custom-offset/" class="ribbon__element" aria-current="page") Post
 
   :markdown-it(html)
     # Ribbon
